@@ -22,7 +22,7 @@ class _SplashScreen extends State<SplashScreen> {
     return Timer(duration, () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Home(title: 'infonila')),
+        MaterialPageRoute(builder: (context) => const Home()),
       );
     });
   }

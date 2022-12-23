@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key, required this.title});
-
-  final String title;
+  const Home({super.key});
 
   @override
   State<Home> createState() => _Home();
@@ -25,7 +23,6 @@ class _Home extends State<Home> {
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(widget.title),
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
@@ -45,7 +42,7 @@ class _Home extends State<Home> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const FaIcon(FontAwesomeIcons.plus),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
