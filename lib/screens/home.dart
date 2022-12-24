@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,40 +8,36 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const FaIcon(FontAwesomeIcons.plus),
-      ),
-    );
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: ListView(
+                    children: const [
+                      Text(
+                        'Home',
+                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'Selamat datang!',
+                        style: TextStyle(fontSize: 14, color: Colors.black),
+                      ),
+                    ],
+                  )),
+            )
+          ],
+        ));
   }
 }

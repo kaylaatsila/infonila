@@ -15,11 +15,11 @@ class Infonila extends StatefulWidget {
 }
 
 class _Infonila extends State<Infonila> {
-  final int _selectedItemIndex = 0;
+  int _selectedItemIndex = 0;
 
   final List pages = [
     const Home(),
-    // CalendarPage(),
+    const Browse(),
   ];
 
   @override
@@ -27,7 +27,8 @@ class _Infonila extends State<Infonila> {
     return MaterialApp(
         title: 'Infonila',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.white, secondary: const Color(0xff5f2498)),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(primary: Colors.white, secondary: const Color(0xff5f2498), tertiary: const Color(0xffFFBC50)),
           textTheme: GoogleFonts.interTextTheme(
             Theme.of(context).textTheme,
           ),
@@ -38,10 +39,16 @@ class _Infonila extends State<Infonila> {
                 elevation: 0,
                 unselectedItemColor: Colors.grey,
                 selectedItemColor: const Color(0xff5f2498),
+                showUnselectedLabels: false,
                 currentIndex: _selectedItemIndex,
+                onTap: (int index) {
+                  setState(() {
+                    _selectedItemIndex = index;
+                  });
+                },
                 items: const [
                   BottomNavigationBarItem(label: 'Home', icon: FaIcon(FontAwesomeIcons.house)),
-                  BottomNavigationBarItem(label: 'Browse', icon: FaIcon(FontAwesomeIcons.calendar))
+                  BottomNavigationBarItem(label: 'Browse', icon: FaIcon(FontAwesomeIcons.magnifyingGlass))
                 ]),
             body: pages[_selectedItemIndex]));
   }

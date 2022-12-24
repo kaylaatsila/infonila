@@ -14,6 +14,7 @@ dependencies:
   google_fonts: ^3.0.1
   font_awesome_flutter: ^10.3.0
   dio: ^4.0.6
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -47,7 +48,7 @@ flutter_icons:
   min_sdk_android: 21 # android min sdk min:16, default 21
 
   image_path: "assets/logo_infonila.png"
-  
+
   web:
     generate: true
     image_path: "assets/logo_infonila.png"
