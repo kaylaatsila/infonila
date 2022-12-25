@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:infonila/screens/alumni.dart';
-import 'package:infonila/screens/lecturers.dart';
 import 'package:infonila/screens/screens.dart';
 
 class Browse extends StatefulWidget {
@@ -15,7 +13,7 @@ class _Browse extends State<Browse> {
   final List pages = [
     const Students(),
     const Alumni(),
-    const Lecturers(),
+    const Lessons(),
   ];
 
   @override
@@ -40,7 +38,7 @@ class _Browse extends State<Browse> {
                     height: 8,
                   ),
                   const Text(
-                    'Apa yang ingin kamu cari?',
+                    'Apa yang ingin kamu tahu?',
                     style: TextStyle(fontSize: 14, color: Colors.black),
                   ),
                   const SizedBox(
@@ -49,12 +47,9 @@ class _Browse extends State<Browse> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      buildActivityButton(FontAwesomeIcons.school, 'Mahasiswa',
-                          const Color(0xff9E63C3).withOpacity(0.2), const Color(0xff9E63C3), 0),
-                      buildActivityButton(FontAwesomeIcons.graduationCap, 'Alumni',
-                          const Color(0xffFEB44A).withOpacity(0.2), const Color(0xffFEB44A), 1),
-                      buildActivityButton(FontAwesomeIcons.chalkboardUser, 'Dosen',
-                          const Color(0xffEF7260).withOpacity(0.2), const Color(0xffEF7260), 2),
+                      browseItem(FontAwesomeIcons.school, 'Mahasiswa', const Color(0xff9E63C3), 0),
+                      browseItem(FontAwesomeIcons.graduationCap, 'Alumni', const Color(0xffFEB44A), 1),
+                      browseItem(FontAwesomeIcons.bookOpen, 'Mata Kuliah', const Color(0xffEF7260), 2),
                     ],
                   ),
                 ],
@@ -64,7 +59,7 @@ class _Browse extends State<Browse> {
         ]));
   }
 
-  GestureDetector buildActivityButton(IconData icon, String title, Color backgroundColor, Color iconColor, int index) {
+  GestureDetector browseItem(IconData icon, String title, Color color, int index) {
     return GestureDetector(
       onTap: (() {
         Navigator.push(
@@ -73,24 +68,24 @@ class _Browse extends State<Browse> {
         );
       }),
       child: Container(
-        margin: const EdgeInsets.all(14),
+        margin: const EdgeInsets.all(12),
         height: MediaQuery.of(context).size.width - 240,
-        width: MediaQuery.of(context).size.width - 80,
+        width: MediaQuery.of(context).size.width - 60,
         alignment: Alignment.center,
-        decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(16.0)),
+        decoration: BoxDecoration(color: color.withOpacity(0.2), borderRadius: BorderRadius.circular(16.0)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FaIcon(
               icon,
-              color: iconColor,
+              color: color,
             ),
             const SizedBox(
               height: 16,
             ),
             Text(
               title,
-              style: const TextStyle(color: Colors.black38, fontWeight: FontWeight.bold, fontSize: 18),
+              style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 18),
             )
           ],
         ),

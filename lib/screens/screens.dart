@@ -1,4 +1,9 @@
 export 'home.dart';
 export 'browse.dart';
 export 'students.dart';
+export 'alumni.dart';
+export 'lessons.dart';
+export 'detail_student.dart';
+export 'detail_alumni.dart';
+export 'detail_lesson.dart';
 export 'splash_screen.dart';
