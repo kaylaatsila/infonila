@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:infonila/models/models.dart';
@@ -52,10 +54,14 @@ class AlumniDetail extends StatelessWidget {
                         Column(
                           children: [
                             alumnusItem(context, alumnus.ipk.toString(), 'Program Studi', const Color(0xff5F2498)),
-                            alumnusItem(context, alumnus.angkatan.toString(), 'IPK', const Color(0xff9E63C3)),
-                            alumnusItem(context, alumnus.lama_studi.toString(), 'Total SKS', const Color(0xffE46986)),
+                            alumnusItem(context, alumnus.angkatan.toString(), 'Angkatan', const Color(0xff9E63C3)),
                             alumnusItem(
-                                context, alumnus.tanggal_wisuda.toString(), 'Semester', const Color(0xffEF7260)),
+                                context,
+                                '${((alumnus.lama_studi! / 12) * pow(10.0, 2)).round().toDouble() / (pow(10.0, 2))}',
+                                'Lama Studi',
+                                const Color(0xffE46986)),
+                            alumnusItem(
+                                context, alumnus.tanggal_wisuda.toString(), 'Tanggal Wisuda', const Color(0xffEF7260)),
                           ],
                         )
                       ],

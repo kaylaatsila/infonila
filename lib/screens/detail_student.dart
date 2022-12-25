@@ -58,7 +58,6 @@ class StudentDetail extends StatelessWidget {
                                 context, student.semester_sekarang.toString(), 'Semester', const Color(0xffEF7260)),
                             studentItem(
                                 context, student.periode_masuk.toString(), 'Periode Masuk', const Color(0xffF67C47)),
-                            studentItem(context, student.status_sekarang.toString(), 'Status', const Color(0xffFE9336)),
                           ],
                         )
                       ],
