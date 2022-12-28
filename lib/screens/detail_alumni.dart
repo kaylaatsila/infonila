@@ -53,7 +53,7 @@ class AlumniDetail extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            alumnusItem(context, alumnus.ipk.toString(), 'Program Studi', const Color(0xff5F2498)),
+                            alumnusItem(context, alumnus.ipk.toString(), 'IPK', const Color(0xff5F2498)),
                             alumnusItem(context, alumnus.angkatan.toString(), 'Angkatan', const Color(0xff9E63C3)),
                             alumnusItem(
                                 context,

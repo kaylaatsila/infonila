@@ -51,7 +51,7 @@ class LessonDetail extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            lessonItem(context, lesson.status.toString(), 'Program Studi', const Color(0xff5F2498)),
+                            lessonItem(context, lesson.status.toString(), 'Status', const Color(0xff5F2498)),
                             // lessonItem(context, lesson.angkatan.toString(), 'IPK', const Color(0xff9E63C3)),
                             // lessonItem(context, lesson.lama_studi.toString(), 'Total SKS', const Color(0xffE46986)),
                             // lessonItem(context, lesson.tanggal_wisuda.toString(), 'Semester', const Color(0xffEF7260)),

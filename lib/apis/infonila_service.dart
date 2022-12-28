@@ -129,6 +129,6 @@ class InfonilaService {
 
     var fetchJsonToken = json.decode(apiToken.body);
 
-    return 'bearer${fetchJsonToken['data']['token']}';
+    return '${fetchJsonToken['data']['token_bearer']}';
   }
 }
